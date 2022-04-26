@@ -11,11 +11,29 @@ export class AppComponent {
 
   calendarOptions: CalendarOptions = {
     initialView: 'listWeek',
+    eventTimeFormat: { // like '14:30:00'
+      hour: '2-digit',
+      minute: '2-digit',
+      meridiem: false,
+      hour12: false
+    },
+    editable: true,
+    droppable: true,
+    eventDisplay: 'auto',
+    displayEventEnd: true,
+    eventInteractive: true,
+    longPressDelay: 0,
     events:  [
       {
         title  : 'Møde 1',
         start  : '2022-04-25T12:00:00',
         end    : '2022-04-25T12:30:00', 
+        description: 'first description' 
+      },
+      {
+        title  : 'Møde 6',
+        start  : '2022-04-25T13:00:00',
+        end    : '2022-04-25T13:30:00', 
         description: 'first description' 
       },
       {
@@ -28,6 +46,18 @@ export class AppComponent {
         title  : 'Møde 3',
         start  : '2022-04-27T11:00:00',
         end    : '2022-04-27T11:30:00', 
+        description: 'first description' 
+      },
+      {
+        title  : 'Møde 7',
+        start  : '2022-04-27T12:00:00',
+        end    : '2022-04-27T12:30:00', 
+        description: 'first description' 
+      },
+      {
+        title  : 'Møde 8',
+        start  : '2022-04-27T13:00:00',
+        end    : '2022-04-27T13:30:00', 
         description: 'first description' 
       },
       {
@@ -49,10 +79,11 @@ export class AppComponent {
       listWeek: { buttonText: 'list week' },
       listMonth: { buttonText: 'list month' }
     },
-    headerToolbar: {
-      left: 'title',
-      center: '',
-      right: 'listDay,listWeek,listMonth'
-    },
+  
+     headerToolbar: {
+    left: 'prev,next today',
+    center: 'title',
+    right: 'listDay,listWeek,listMonth'
+  }
   };
 }
