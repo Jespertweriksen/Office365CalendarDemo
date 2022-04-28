@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { CalendarOptions } from '@fullcalendar/angular';
+import dkLocale from '@fullcalendar/core/locales/da';
+
 
 @Component({
   selector: 'app-root',
@@ -22,13 +24,20 @@ export class AppComponent {
     eventDisplay: 'auto',
     displayEventEnd: true,
     eventInteractive: true,
+    displayEventTime: true,
     longPressDelay: 0,
+    locale: dkLocale,
     events:  [
       {
-        title  : 'Møde 1',
-        start  : '2022-04-25T12:00:00',
-        end    : '2022-04-25T12:30:00', 
-        description: 'first description' 
+        //Eksempel på møde, der gentages.
+        title  : 'Møderække 1 - denne er booket indtil d. 2/7',
+        description: 'first description',
+        daysOfWeek: ['1'],
+        startRecur: '2022-04-25',
+        startTime: '10:30:00',
+        endTime: '11:00:00',
+        endRecur: '2022-07-02',
+
       },
       {
         title  : 'Møde 6',
