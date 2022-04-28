@@ -3,6 +3,7 @@ import { CalendarOptions } from '@fullcalendar/angular';
 import dkLocale from '@fullcalendar/core/locales/da';
 
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,7 +13,7 @@ export class AppComponent {
   title = 'Calendar_Demo';
 
   calendarOptions: CalendarOptions = {
-    initialView: 'listWeek',
+    initialView: 'timeGridWeek',
     eventTimeFormat: { // like '14:30:00'
       hour: '2-digit',
       minute: '2-digit',
@@ -86,13 +87,13 @@ export class AppComponent {
     views: {
       listDay: { buttonText: 'list day' },
       listWeek: { buttonText: 'list week' },
-      listMonth: { buttonText: 'list month' }
+      timeGridWeek: { buttonText: 'timeGridWeek' }
     },
   
      headerToolbar: {
     left: 'prev,next today',
     center: 'title',
-    right: 'listDay,listWeek,listMonth'
+    right: 'listDay,listWeek,timeGridWeek'
   }
   };
 }

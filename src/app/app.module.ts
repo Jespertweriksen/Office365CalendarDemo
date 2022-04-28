@@ -6,11 +6,13 @@ import  ListView  from '@fullcalendar/list';
 import interactionPlugin from '@fullcalendar/interaction'; // a plugin!
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import timeGridPlugin from '@fullcalendar/timegrid';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
   interactionPlugin,
-  ListView
+  ListView,
+  timeGridPlugin
 ]);
 
 @NgModule({
